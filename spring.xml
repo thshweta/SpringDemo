@@ -1,0 +1,36 @@
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id ="dev" class="org.example.Dev" autowire="byName">
+<!--            <property name="age" value="20"/>     //setter injection-->
+<!--        <constructor-arg value="21"> </constructor-arg>   //constructor injection  -->
+
+<!--        <property name="laptop" ref="lap1"/>  //setter injection for reference variable-->
+<!--             <constructor-arg ref="lap1" />    //constructor injection for reference variable     -->
+
+
+      <!--<property name="comp" ref="lap1" />--> <!--injecting laptop to the Dev 'cause laptop itself is computer,or we can also write "desk1"-->
+    </bean>
+
+
+   <!-- <bean id ="dev1" class="org.example.Dev">  if you don't want to comment it then specify the class "Dev"
+                                                    Dev obj = context.getBean(Dev.class); here before context
+                                                    so that the spring doesn't get confused
+    </bean>-->
+
+
+    <!--<bean id ="lap1" class="org.example.Laptop">-->
+    <bean id ="comp" class="org.example.Laptop" primary="true"> <!--in terms of confusion we should use primary keyword-->
+    </bean>
+
+   <!-- <bean id="desk1" class="org.example.Desktop" >
+    </bean>-->
+
+    <bean id="comp1" class="org.example.Desktop" >
+    </bean>
+
+
+</beans>
